@@ -1,5 +1,8 @@
 <template>
   <div class="movie">
+      <div>
+        <img :src="img + details.backdrop_path" alt="">
+      </div>
       <h3>{{details.title}}</h3>
       <div class="separatore"></div>
       <h3>{{details.original_title}}</h3>
@@ -22,7 +25,8 @@ export default {
   data() {
     return {
       italia: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/1500px-Flag_of_Italy.svg.png",
-      inghilterra: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Flag_of_the_United_Kingdom.svg/2560px-Flag_of_the_United_Kingdom.svg.png"
+      inghilterra: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Flag_of_the_United_Kingdom.svg/2560px-Flag_of_the_United_Kingdom.svg.png",
+      img: "https://image.tmdb.org/t/p/w342",
     };
   },
   methods: {
@@ -32,6 +36,10 @@ export default {
           } else if (this.details.original_language == "en"){
               return this.inghilterra
           }
+      },
+
+      imageMovie() {
+          this.img = "https://image.tmdb.org/t/p/w342" + this.details.backdrop_path
       }
   }
 }
