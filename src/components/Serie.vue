@@ -1,8 +1,8 @@
 <template>
-  <div class="movie">
-      <h3>{{details.title}}</h3>
+  <div class="serie">
+      <h3>{{details.name}}</h3>
       <div class="separatore"></div>
-      <h3>{{details.original_title}}</h3>
+      <h3>{{details.original_name}}</h3>
       <div class="separatore"></div>
       <div>
           <!-- {{details.original_language}}  -->
@@ -39,7 +39,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-    .movie {
+    .serie {
         text-align: center;
         width: calc(100% / 6);
         padding: 25px;
