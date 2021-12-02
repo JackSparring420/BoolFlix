@@ -9,6 +9,7 @@
 </template>
 
 <script>
+// import fontawesome from 'fontawesome';
 import axios from 'axios';
 import MyHeader from './components/MyHeader.vue'
 import Movies from './components/Movies.vue';
@@ -58,6 +59,7 @@ export default {
 </script>
 
 <style lang="scss">
+
   * {
     margin: 0;
     padding: 0;
