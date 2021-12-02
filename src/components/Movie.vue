@@ -12,7 +12,7 @@
                <span>Lingua originale</span> <img :src="linguage()" class="flag"> 
             </div>
             <div class="separatore"></div>
-            <span>Voto:</span> <span v-for="star, i in stars" :key="i"><i class="fas fa-star" ></i></span>
+            <span>Voto:</span> <span>{{voteStars()}}</span><star-rating :rating="voteStars()"></star-rating>
             <div class="separatore"></div>
             <span>Overview:</span> <span>{{details.overview}}</span>
       </div>
@@ -20,8 +20,12 @@
 </template>
 
 <script>
+import StarRating from 'vue-star-rating'
 export default {
   name: 'Movie',
+  components: {
+    StarRating
+  },
   props: {
       details:Object
   },
@@ -32,9 +36,9 @@ export default {
       mondo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Earth_Day_Flag.png/1280px-Earth_Day_Flag.png",
       img: "https://image.tmdb.org/t/p/w342",
       netflix: "https://travelnostop.com/wp-content/uploads/2019/11/netflix.png",
-      stars: ["","",""]
     };
   },
+  computed:{},
   methods: {
       linguage() {
           if(this.details.original_language == "it") {
@@ -48,7 +52,7 @@ export default {
 
       imageMovie() {
           if(this.details.poster_path !== null){
-              console.log(this.details.poster_path);
+            //   console.log(this.details.poster_path);
               return this.img + this.details.poster_path
           } else {
               return this.netflix
@@ -56,10 +60,8 @@ export default {
       },
 
       voteStars() {
-          for(let i=0; i<= Math.floor(this.details.vote_average / 2); i++){
             // this.stars.push(this.star)
-            this.stars += ""
-          }
+            return Math.floor(this.details.vote_average / 2)
 
           
           
