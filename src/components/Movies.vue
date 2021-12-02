@@ -26,11 +26,11 @@ main {
   background-color: #1e2d3b;
 }
 #movies-container {
-  width: 60%;
+  // width: 90%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  // gap: 10px;
   padding: 50px;
 
   .movie {

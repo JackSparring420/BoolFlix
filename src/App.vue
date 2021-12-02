@@ -24,8 +24,8 @@ export default {
   },
   data() {
     return {
-      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=9e464d54d22c36357a80172c75c77726&language=IT&query=",
-      apiUrlSerie: "https://api.themoviedb.org/3/search/tv?api_key=9e464d54d22c36357a80172c75c77726&language=it_IT&query=",
+      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=9e464d54d22c36357a80172c75c77726&query=",
+      apiUrlSerie: "https://api.themoviedb.org/3/search/tv?api_key=9e464d54d22c36357a80172c75c77726&query=",
       searchText: '',
       movies: [],
       series: [],
@@ -59,6 +59,7 @@ export default {
 </script>
 
 <style lang="scss">
+// @import '~@fortawesome/fontawesome-free/css/all.min.css';
 
   * {
     margin: 0;
