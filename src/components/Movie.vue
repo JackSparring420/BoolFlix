@@ -12,7 +12,8 @@
                <span>Lingua originale</span> <img :src="linguage()" class="flag"> 
             </div>
             <div class="separatore"></div>
-            <span>Voto:</span> <span>{{voteStars()}}</span><star-rating :rating="voteStars()"></star-rating>
+            <span>Voto:</span> <span>{{voteStars()}}</span>
+            <star-rating :rating="voteStars()" star-size="30" increment="0.5" :show-rating="false"></star-rating>
             <div class="separatore"></div>
             <span>Overview:</span> <span>{{details.overview}}</span>
       </div>
@@ -60,8 +61,8 @@ export default {
       },
 
       voteStars() {
-            // this.stars.push(this.star)
-            return Math.floor(this.details.vote_average / 2)
+            // return Math.floor(this.details.vote_average / 2)
+            return (this.details.vote_average / 2)
 
           
           
