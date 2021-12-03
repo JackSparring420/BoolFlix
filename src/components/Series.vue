@@ -1,8 +1,6 @@
 <template>
   <main>
-      <h3>
-          serie
-      </h3>
+    <h2>Serie TV</h2>
     <div id="series-container">
       <Serie v-for="serie, i in series" :key="i" :details="serie" />
     </div>
@@ -29,22 +27,9 @@ main {
   background-color: #1e2d3b;
 }
 #series-container {
-  width: 60%;
-  margin: auto;
+    margin: auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
   padding: 50px;
-
-  .movie {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-}
-  #filtro{
-    display: flex;
-    justify-content: center;
-    padding-top: 50px ;
   }
 </style>

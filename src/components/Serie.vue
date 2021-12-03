@@ -1,24 +1,33 @@
 <template>
   <div class="serie">
-      <div>
+      <div class="copertina">
         <img :src="imageSerie()" alt="">
+      </div>    
+    <div class="none">
+      <span>Titolo</span> <h3>{{details.name}}</h3>
+      <div class="separatore"></div>
+      <span>Titolo originale:</span> <h4>{{details.original_name}}</h4>
+      <div class="separatore"></div>
+      <div>
+          <span>Lingua originale</span> <img :src="linguage()" class="flag"> 
       </div>
-    <h3>{{ details.name }}</h3>
-    <div class="separatore"></div>
-    <h3>{{ details.original_name }}</h3>
-    <div class="separatore"></div>
-    <div>
-      <!-- {{details.original_language}}  -->
-      <img :src="linguage()" />
+      <div class="separatore"></div>
+      <span>Voto:</span> <span>{{voteStars()}}</span>
+      <star-rating :rating="voteStars()" star-size="30" increment="0.5" :show-rating="false"></star-rating>
+      <div class="separatore"></div>
+      <span>Overview:</span> <p>{{details.overview}}</p>
     </div>
-    <div class="separatore"></div>
-    <div>{{ details.vote_average }}</div>
-  </div>
+  </div> 
 </template>
 
 <script>
+import StarRating from 'vue-star-rating'
+
 export default {
   name: "Movie",
+   components: {
+    StarRating
+  },
   props: {
     details: Object,
   },
@@ -50,6 +59,9 @@ export default {
         return this.netflix;
       }
     },
+    voteStars() {
+      return (this.details.vote_average / 2)
+    },
   },
 };
 </script>
@@ -57,19 +69,47 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .serie {
-  text-align: center;
-  width: calc(100% / 6);
-  padding: 25px;
-  background: rgba($color: #000000, $alpha: 0.3);
-  h3 {
-    color: white;
-  }
-  .separatore {
-    height: 20px;
-  }
-  img {
-    max-width: 30%;
-    max-height: 0%;
-  }
-}
+ width: calc(100% / 6);
+        height: 500px;
+        // padding: 0 10px;
+        background: rgba($color: #000000, $alpha: 0.3);
+        border: 5px solid #1e2d3b;
+        color: red;
+        overflow: hidden;
+
+            .copertina {
+                width: 100%;
+                height: 500px;
+                img{
+                    object-fit: cover;
+                    // object-position: center;
+                    width: 100%;
+                    height: 100%;
+                }
+            } 
+            h3, h4, p {
+                color: white;
+                display: inline;
+            }
+            .separatore{
+                height: 20px;
+            }
+            .flag {
+                max-width: 10%;
+                max-height: 10%;
+            }
+            .none {
+                display: none;
+            }
+            
+
+    }
+
+    .serie:hover .none{
+        display: block;
+    }
+    .serie:hover .copertina{
+        display: none;
+    }
+
 </style>

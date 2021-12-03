@@ -15,7 +15,7 @@
             <span>Voto:</span> <span>{{voteStars()}}</span>
             <star-rating :rating="voteStars()" star-size="30" increment="0.5" :show-rating="false"></star-rating>
             <div class="separatore"></div>
-            <span>Overview:</span> <span>{{details.overview}}</span>
+            <span>Overview:</span> <p>{{details.overview}}</p>
       </div>
   </div>
 </template>
@@ -61,11 +61,7 @@ export default {
       },
 
       voteStars() {
-            // return Math.floor(this.details.vote_average / 2)
             return (this.details.vote_average / 2)
-
-          
-          
       }
 
   }
@@ -76,10 +72,12 @@ export default {
 <style scoped lang="scss">
     .movie {
         width: calc(100% / 6);
+        height: 500px;
         // padding: 0 10px;
         background: rgba($color: #000000, $alpha: 0.3);
         border: 5px solid #1e2d3b;
         color: red;
+        overflow: hidden;
 
             .copertina {
                 width: 100%;
@@ -91,7 +89,7 @@ export default {
                     height: 100%;
                 }
             } 
-            h3, h4 {
+            h3, h4, p {
                 color: white;
                 display: inline;
             }
@@ -105,6 +103,7 @@ export default {
             .none {
                 display: none;
             }
+            
 
     }
 
