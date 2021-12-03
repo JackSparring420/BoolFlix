@@ -2,8 +2,9 @@
   <header>
     <h1>BOOLFLIX</h1>
     <div>
-        <input v-model.trim="text" type="text">
-        <button @click.prevent="$emit('search', text)">search</button> 
+        <i class="fas fa-search" @click.prevent="$emit('search', text)"></i>
+        <input v-model.trim="text" type="text" @keyup.enter="$emit('search', text)">
+        <!-- <button @click.prevent="$emit('search', text)">search</button>  -->
     </div>
   </header>
 </template>
@@ -35,7 +36,13 @@ export default {
 
       input {
         height: 30px;
-        margin-right: 25px;
+        margin: 0 20px;
+      }
+
+      i {
+        font-size: 25px;
+        position: relative;
+        top: 5px
       }
   }
 </style>

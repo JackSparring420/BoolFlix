@@ -9,7 +9,7 @@
             <span>Titolo originale:</span> <h4>{{details.original_title}}</h4>
             <div class="separatore"></div>
             <div>
-               <span>Lingua originale</span> <img :src="linguage()" class="flag"> 
+               <span>Lingua originale:</span> <span class="language">{{details.original_language}} </span> <img :src="language()" class="flag"> 
             </div>
             <div class="separatore"></div>
             <span>Voto:</span> <span>{{voteStars()}}</span>
@@ -41,7 +41,7 @@ export default {
   },
   computed:{},
   methods: {
-      linguage() {
+      language() {
           if(this.details.original_language == "it") {
               return this.italia
           } else if (this.details.original_language == "en"){
@@ -73,9 +73,7 @@ export default {
     .movie {
         width: calc(100% / 6);
         height: 500px;
-        // padding: 0 10px;
-        background: rgba($color: #000000, $alpha: 0.3);
-        border: 5px solid #1e2d3b;
+        border: 5px solid black;
         color: red;
         overflow: hidden;
 
@@ -84,12 +82,11 @@ export default {
                 height: 500px;
                 img{
                     object-fit: cover;
-                    // object-position: center;
                     width: 100%;
                     height: 100%;
                 }
             } 
-            h3, h4, p {
+            h3, h4, p, .language {
                 color: white;
                 display: inline;
             }

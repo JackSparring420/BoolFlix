@@ -48,7 +48,6 @@ export default {
       });
     },
 
-
     searching(movies) {
       this.searchText = movies;
       this.getMovies();
@@ -71,5 +70,10 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #807062;
+
+  main {
+    background-color: black;
+    min-height: calc(50vh - 28.5px);
+  }
 }
 </style>
