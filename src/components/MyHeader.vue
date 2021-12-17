@@ -3,8 +3,7 @@
     <h1>BOOLFLIX</h1>
     <div>
         <i class="fas fa-search" @click.prevent="$emit('search', text)"></i>
-        <input v-model.trim="text" type="text" @keyup.enter="$emit('search', text)">
-        <!-- <button @click.prevent="$emit('search', text)">search</button>  -->
+        <input v-model.trim="text" type="text" @keyup.enter="$emit('search', text)" placeholder="search">
     </div>
   </header>
 </template>
@@ -30,8 +29,10 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    height: 55px;
       h1 {
         color: red;
+        user-select: none;
       }
 
       input {

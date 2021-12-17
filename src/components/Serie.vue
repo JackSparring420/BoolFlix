@@ -13,7 +13,7 @@
       </div>
       <div class="separatore"></div>
       <span>Voto:</span> <span>{{voteStars()}}</span>
-      <star-rating :rating="voteStars()" star-size="30" increment="0.5" :show-rating="false"></star-rating>
+      <star-rating :rating="voteStars()" star-size="30" increment="0.25" :show-rating="false"></star-rating>
       <div class="separatore"></div>
       <span>Overview:</span> <p>{{details.overview}}</p>
     </div>

@@ -9,7 +9,6 @@
 </template>
 
 <script>
-// import fontawesome from 'fontawesome';
 import axios from 'axios';
 import MyHeader from './components/MyHeader.vue'
 import Movies from './components/Movies.vue';
@@ -48,8 +47,8 @@ export default {
       });
     },
 
-    searching(movies) {
-      this.searchText = movies;
+    searching(text) {
+      this.searchText = text;
       this.getMovies();
       this.getSeries();
     },
@@ -58,8 +57,6 @@ export default {
 </script>
 
 <style lang="scss">
-// @import '~@fortawesome/fontawesome-free/css/all.min.css';
-
   * {
     margin: 0;
     padding: 0;
@@ -73,7 +70,7 @@ export default {
 
   main {
     background-color: black;
-    min-height: calc(50vh - 28.5px);
+    min-height: 94vh;
   }
 }
 </style>
